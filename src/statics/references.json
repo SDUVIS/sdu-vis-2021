@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Mastering the information age - solving problems with visual analytics",
+    "authors": ["Daniel Keim", "Jöm Kohlhammer", "Geoffrey Ellis", "Florian Mansmann"],
+    "pub": "Eurographics Association",
+    "pubYear": 2010
+  },
+  {
+    "name": "Visualization Analysis & Design",
+    "authors": ["Tamara Munzner"],
+    "chinese": "可视化分析与设计",
+    "pub": "The People's Posts and Telecommunications Press",
+    "pubYear": 2014
+  },
+  {
+    "name": "The Visual Display of Quantitative Information",
+    "authors": ["Edward R. Tufte Ullman"],
+    "chinese": "定量信息的可视化显示",
+    "pub": "The People's Posts and Telecommunications Press",
+    "pubYear": 2012
+  },
+  {
+    "name": "Interactive data visualization",
+    "authors": ["Scott Murray"],
+    "chinese": "数据可视化实战（使用D3设计交互式图表）",
+    "pub": "The People's Posts and Telecommunications Press",
+    "pubYear": 2013
+  },
+  {
+    "name": "数据可视化",
+    "authors": ["陈为", "沈则潜"],
+    "pub": "Publishing House of Electronics Industry",
+    "pubYear": 2013
+  }
+]

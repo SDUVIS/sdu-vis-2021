@@ -1,0 +1,42 @@
+@media (max-width: 450px){
+  $asideWidth: 100px;
+}
+
+$asideWidth: 10em;
+
+.langSwitch{
+  font-size: 1.2em;
+}
+
+.header{
+  color: #492a7c;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-size: 2em;
+  font-family: "Avenir", Verdana;
+}
+
+.nav{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  &Item{
+    padding: 0 10px;
+  }
+}
+
+.aside{
+  position:absolute;
+  width: $asideWidth;
+}
+
+.main{
+  padding-left: $asideWidth;
+}
+
+.footer{
+  display: flex;
+  justify-content: flex-end;
+  padding-left: $asideWidth;
+}
