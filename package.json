@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-gh": "rimraf build && yarn build && cd build && git init && git add . && git commit -m \"update\" && git remote add origin https://github.com/SDUVisualization/sdu-vis-2021-page.git && git push --set-upstream origin master --force && cd ..",
+    "build-gh": "rimraf build && yarn build && cd build && git init && git add . && git commit -m \"update\" && git remote add origin https://github.com/SDUVisualization/SDUVisualization.github.io.git && git push --set-upstream origin master --force && cd ..",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
