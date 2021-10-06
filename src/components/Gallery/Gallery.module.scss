@@ -8,14 +8,15 @@
   margin-bottom: 2em;
 
   &Img{
-    box-sizing: content-box;
-    height: 99%;
-    width: 99%;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
     border-width: 2px;
-    //object-fit: cover;
+    border-style: solid;
+    border-color: white;
+    box-sizing: border-box;
     &:hover{
-      border-style: solid;
       border-color: darkgrey;
     }
   }

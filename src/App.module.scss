@@ -42,6 +42,10 @@ $asideWidth: 8em;
 }
 
 .aside{
+  @media (min-width: 450px){
+    font-size: 0.8em;
+  }
+  font-size: 0.6em;
   position: absolute;
   width: $asideWidth;
 }
