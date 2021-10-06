@@ -18,7 +18,6 @@ $asideWidth: 8em;
 
 .header {
   color: #492a7c;
-  margin-bottom: 1em;
   margin-top: 1em;
   font-size: 2em;
   font-family: "Avenir", Verdana;
@@ -36,7 +35,7 @@ $asideWidth: 8em;
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   &Item{
     padding: 0 10px;
   }
