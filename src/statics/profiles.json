@@ -1,0 +1,26 @@
+{
+  "instructors": [
+    {
+      "en": "Yunhai Wang",
+      "zh": "汪云海"
+    }
+  ],
+  "assistants": [
+    {
+      "en": "Cheng Peng",
+      "zh": "彭程"
+    },
+    {
+      "en": "Fahai Zhong",
+      "zh": "钟发海"
+    },
+    {
+      "en": "Kaiyi Zhang",
+      "zh": "张开翼"
+    },
+    {
+      "en": "Yuchun Wang",
+      "zh": "王玉春"
+    }
+  ]
+}

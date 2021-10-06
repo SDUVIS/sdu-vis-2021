@@ -7,30 +7,34 @@ import {
   main as mainClass,
   footer as footerClass,
 } from "./App.module.scss";
-import enData from "./statics/locale/en.json";
-import zhData from "./statics/locale/zh.json";
-import Header from "./components/Header/Header";
+import enLocale from "./statics/locale/en.json";
+import zhLocale from "./statics/locale/zh.json";
+import profiles from "./statics/profiles.json";
+import referenceData from "./statics/references.json";
+import galleryData from "./statics/gallery.json"
 import Home from "./components/Home/Home";
 import Projects from "./components/Projects/Projects";
 import Demos from "./components/Demos/Demos";
-import Aside from "./components/Aside/Aside";
-import Footer from "./components/Footer/Footer";
+import Gallery from "./components/Gallery/Gallery";
+import Profiles from "./components/Profiles/Profiles";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, createContext } from "react";
 
 function App() {
   const [isEnglish, setIsEnglish] = useState(true);
-  const data = isEnglish ? enData : zhData;
-  const {title, year} = data;
+  const localeData = isEnglish ? enLocale : zhLocale;
+  const localeProfiles = Object.fromEntries(isEnglish
+    ? Object.entries(profiles).map(([post, persons]) => ([post, persons.map(person => person.en)]))
+    : Object.entries(profiles).map(([post, persons]) => ([post, persons.map(person => person.zh)])));
+  const { title, year } = localeData;
 
   return (
     <>
       <header className={headerClass}>
-        <div>
+        <a href="/">
           <strong>SDU</strong> {title} ({year})
-        </div>
+        </a>
       </header>
-
       <BrowserRouter>
         <nav className={navClass}>
           <Link to="/" className={navItemClass}>
@@ -42,14 +46,14 @@ function App() {
           <Link to="/demos" className={navItemClass}>
             Demos
           </Link>
-          <a href="#" className={navItemClass + " " + langSwitchClass} onClick={() => {setIsEnglish(!isEnglish)}}>
-            {isEnglish ? "Chinese" : "English"}
+          <a href="#" className={navItemClass + " " + langSwitchClass} onClick={() => { setIsEnglish(!isEnglish) }}>
+            {isEnglish ? "中文" : "English"}
           </a>
         </nav>
+        <Gallery galleryData={galleryData}></Gallery>
         <aside className={asideClass}>
-          <div>111</div>
-          <div>222</div>
-          <div>333</div>
+          <Profiles profiles={localeProfiles} localeData={localeData}></Profiles>
+          <br/>
         </aside>
         <main className={mainClass}>
           <Switch>
@@ -60,7 +64,7 @@ function App() {
               <Demos></Demos>
             </Route>
             <Route path="/">
-              <Home data={data}></Home>
+              <Home referenceData={referenceData} localeData={localeData}></Home>
             </Route>
           </Switch>
         </main>

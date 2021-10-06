@@ -1,32 +1,32 @@
 import { v4 as uuid } from "uuid";
-import referenceData from "../../statics/references.json";
 
-function ReferenceItem({ datum, locale }) {
+function ReferenceItem({ datum, localeData }) {
   const { name, authors, chineseName, pub, pubYear } = datum;
   return (
     <ul>
-      <b>{name}</b>
+      <em>{name}</em>
       <li>
-        {locale.authors}:&nbsp;&nbsp;
+        {localeData.authors}:&nbsp;&nbsp;
         {authors.join(", ")}
       </li>
       <li>
-        {locale.pub}:&nbsp;&nbsp;
+        {localeData.pub}:&nbsp;&nbsp;
         {pub}
       </li>
-      {chineseName&&locale.chineseName ? <li>
-        {locale.chineseName}:&nbsp;&nbsp;
+      {chineseName&&localeData.chineseName ? <li>
+        {localeData.chineseName}:&nbsp;&nbsp;
         chineseName
       </li> : null}
       <li>
-        {locale.pubYear}:&nbsp;&nbsp;
+        {localeData.pubYear}:&nbsp;&nbsp;
         {pubYear}
       </li>
     </ul>
   );
 }
 
-function Home({ data }) {
+function Home({ referenceData, localeData }) {
+  console.log(referenceData);
   const {
     courseIntroContent,
     courseDesc,
@@ -41,7 +41,7 @@ function Home({ data }) {
     chineseName,
     pub,
     pubYear,
-  } = data;
+  } = localeData;
   return (
     <div>
       <section>
@@ -80,7 +80,7 @@ function Home({ data }) {
               {" "}
               <ReferenceItem
                 datum={datum}
-                locale={{ authors, chineseName, pub, pubYear }}
+                localeData ={localeData}
               ></ReferenceItem>
               <br/>
             </li>

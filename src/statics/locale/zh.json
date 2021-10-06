@@ -40,5 +40,7 @@
     "fetching": "正在获取文件列表…",
     "fileName": "文件名",
     "url": "地址",
-    "vis": "更多参考资料详见："
+    "vis": "更多参考资料详见：",
+    "instructors": "指导老师",
+    "assistants": "助教"
 }

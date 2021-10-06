@@ -39,5 +39,7 @@
     "fetching": "Fetching file list...",
     "fileName": "File Name",
     "url": "URL",
-    "vis": "For more reference materials, see:"
+    "vis": "For more reference materials, see:",
+    "instructors": "INSTRUCTORS",
+    "assistants": "ASSISTANTS"
 }

@@ -1,0 +1,22 @@
+.gallery{
+  display: grid;
+  height: 14ddvw;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 2em;
+
+  &Img{
+    box-sizing: content-box;
+    height: 99%;
+    width: 99%;
+    overflow: hidden;
+    border-width: 2px;
+    //object-fit: cover;
+    &:hover{
+      border-style: solid;
+      border-color: darkgrey;
+    }
+  }
+}
