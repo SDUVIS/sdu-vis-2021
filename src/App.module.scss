@@ -1,61 +1,85 @@
-@media (min-width: 450px){
-  $asideWidth: 10em;
-}
+// $max-page-width: 900px;
 
-$asideWidth: 8em;
-
-.langSwitch{
-  font-size: 1.2em;
-  &::before{
-    // float: left;
-    // content: " ";
-    // background-image: url("statics/iconfont/earth.svg");
-    // background-size: contain;
-    // height: 1.2em;
-    // width: 1.2em;
+@mixin styling($aside-width, $container-padding) {
+  .wrapper{
+    display: flex;
+    justify-content: center;
+    background-color: grey;
   }
-}
+  
+  .container{
+    padding: $container-padding;
+    //max-width: $max-page-width;
+    background-color: white;
+  }
 
-.header {
-  color: #492a7c;
-  margin-top: 1em;
-  font-size: 2em;
-  font-family: "Avenir", Verdana;
-  a {
-    text-decoration: none;
-    &:hover{
-      color: #7533f4;
-      text-decoration: underline;
+
+  .langSwitch{
+    font-size: 1.2rem;
+    &::before{
+      // float: left;
+      // content: " ";
+      // background-image: url("statics/iconfont/earth.svg");
+      // background-size: contain;
+      // height: 1.2rem;
+      // width: 1.2rem;
     }
   }
-}
 
-.nav{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin-bottom: 1em;
-  &Item{
-    padding: 0 10px;
+  .header {
+    color: #492a7c;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-family: "Avenir", Verdana;
+    a {
+      text-decoration: none;
+      &:hover{
+        color: #7533f4;
+        text-decoration: underline;
+      }
+    }
   }
-}
 
-.aside{
-  @media (min-width: 450px){
-    font-size: 0.8em;
+  .nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+    &Item{
+      padding: 0 10px;
+    }
   }
-  font-size: 0.6em;
-  position: absolute;
-  width: $asideWidth;
+
+  .aside{
+    @media (min-width: 450px){
+      font-size: 0.8rem;
+    }
+    font-size: 0.6rem;
+    position: absolute;
+    width: $aside-width;
+  }
+
+  .main{
+    padding-left: $aside-width;
+  }
+
+  .footer{
+    display: flex;
+    justify-content: flex-end;
+    padding-left: $aside-width;
+  }
+
 }
 
-.main{
-  padding-left: $asideWidth;
+@media screen and (max-width: 450px) {
+  $aside-width: 6rem;
+  $container-padding: 0.5rem 1rem;
+  @include styling($aside-width, $container-padding)
 }
 
-.footer{
-  display: flex;
-  justify-content: flex-end;
-  padding-left: $asideWidth;
+@media screen and (min-width: 450px) {
+  $aside-width: 9rem;
+  $container-padding: 1rem 2rem;
+  @include styling($aside-width, $container-padding)
 }
