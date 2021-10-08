@@ -1,4 +1,4 @@
-// $max-page-width: 900px;
+$max-page-width: 900px;
 
 @mixin styling($aside-width, $container-padding) {
   .wrapper{
@@ -9,7 +9,8 @@
   
   .container{
     padding: $container-padding;
-    //max-width: $max-page-width;
+    max-width: $max-page-width;
+    min-height: 720px;
     background-color: white;
   }
 
@@ -62,6 +63,7 @@
 
   .main{
     padding-left: $aside-width;
+    //min-height: 100vh;
   }
 
   .footer{

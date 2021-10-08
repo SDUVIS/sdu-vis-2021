@@ -9,6 +9,9 @@
     padding: 1rem 2rem;
   }
 } */
+html {
+  background-color: grey;
+}
 
 body {
   max-width: 800;
