@@ -25,23 +25,18 @@ function ReferenceItem({ datum, localeData }) {
   );
 }
 
-function Home({ referenceData, localeData }) {
-  console.log(referenceData);
+function Home({ descriptionData, referenceData, localeData }) {
   const {
-    courseIntroContent,
     courseDesc,
-    courseDescContent,
     aims,
-    aimContents,
     request,
-    requestContentDesc,
-    requestContents,
     reference,
     authors,
     chineseName,
     pub,
     pubYear,
   } = localeData;
+  const {couseIntro: courseIntroContent, courseDesc: courseDescContent, aims: aimContents, requestDesc: requestContentDesc, requestContents: requestContents} = descriptionData;
   return (
     <div>
       <section>

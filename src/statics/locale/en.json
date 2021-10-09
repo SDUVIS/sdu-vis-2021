@@ -1,6 +1,4 @@
 {
-    "title": "Visualization Techniques ",
-    "year": 2021,
     "homePage": "Home",
     "projectList": "Teaching content and class hours",
     "resultList": "Results",
@@ -9,26 +7,9 @@
     "courseEntriesHint": "(Only for students in class)",
     "location": "Shandong University",
     "courseIntro": "Introduction",
-    "courseIntroContent": "Visualization technology transforms complex and abstract data into visual and intuitive graphics, allowing users to explore the data in a visually comprehensible way and discover the hidden laws in the data, which can effectively improve the comprehensive analysis capabilities of big data and the level of intelligent decision-making.",
     "courseDesc": "Course Description",
-    "courseDescContent": "For data owners from various disciplines, in order to verify inferences or discover new information, visualization has become a powerful means to help them understand and display data. The logic of visualization is to use our interpretation capabilities through visual perception channels, and to encode data information into images and graphs to improve our understanding of data. Computer science, mathematics, cognitive and perceptual science, and physics techniques are often transformed into various visualization problems. This introductory course covers topics in many visualization sub-fields including information visualization and scientific visualization, and aims to show students how data visualization can help find solutions to practical problems in the process of data analysis in various fields. Through this course, students will be familiar with some visualization techniques and methods for displaying different types of data, and cultivate the ability to quickly use visualization-based methods to respond to problems when they encounter actual problems.",
     "aims": "Teaching Objectives",
-    "aimContents": [
-        "This course aims to provide students with the basic knowledge needed to understand the current progress in visualization research. At the end of the course, students will receive:.",
-        "Understand key visualization techniques and theories, including data models, graphical perception, and visual coding and interaction methods.",
-        "Get in touch with some common data fields and corresponding analysis tasks, including multivariate data, network, text and graphics.",
-        "Build and evaluate the visualization system.",
-        "Able to read and discuss visualization papers."
-    ],
     "request": "Teaching requirements",
-    "requestContentDesc": "Through the study of this course, the following abilities will be cultivated:",
-    "requestContents": [
-        "Engineering knowledge. Through the study of this course, students have a solid visual theoretical foundation and practical ability.Through visual curriculum design and other teaching links, integrate the knowledge of software engineering and web programming and other related courses, and finally enable students to use software engineering methods to solve practical visualization The initial ability of the problem.",
-        "Design/Develop solutions. Through the teaching of visualization theory and commonly used tools, students are trained to design ability of visualization diagrams, so that students have the ability to undertake visualization design work in daily work.",
-        "Use modern tools. Through the experiment and course design of this course, students can achieve visual effects through various tools and cultivate their ability to master and use modern tools.",
-        "Research capacity. Visualization technology is developing rapidly. By adding cutting-edge research content of visualization technology to teaching content, students' research interest and research ability are cultivated.",
-        "Communication skills. Through group communication, classroom report, report writing, etc., students' communication skills are cultivated, so that students can quickly acquire new knowledge and new information."
-    ],
     "reference": "Textbooks and Reference Materials",
     "authors": "Authors",
     "pub": "Press",

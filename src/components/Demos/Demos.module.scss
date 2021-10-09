@@ -1,7 +1,7 @@
 @use "../../base.module" as base;
 @use "sass:math";
 
-$figure-width: base.$max-page-width / 4;
+$figure-width: base.$max-page-width / 5;
 $figure-height: $figure-width * 0.6;
 
 .demos{
@@ -11,6 +11,7 @@ $figure-height: $figure-width * 0.6;
 .figures-wrapper{
   display: flex;
   flex-wrap: wrap;
+  justify-content: start;
 }
 
 .figure{
