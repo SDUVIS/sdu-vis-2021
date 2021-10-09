@@ -1,3 +1,9 @@
+@use "../../base.module" as base;
+@use "sass:math";
+
+$figure-width: base.$max-page-width / 4;
+$figure-height: $figure-width * 0.6;
+
 .demos{
   padding-top: 1em;
 }
@@ -11,9 +17,9 @@
   overflow: hidden;
   border-radius: 5%;
   border-color: darkgray;
-  height: 12vw;
-  width: 20vw;
-  margin: 1vw;
+  height: $figure-height;
+  width: $figure-width;
+  margin: 1%;
   overflow: hidden;
   border-width: 2px;
   border-style: solid;

@@ -1,4 +1,4 @@
-$max-page-width: 900px;
+@use "base.module" as base;
 
 @mixin styling($aside-width, $container-padding) {
   .wrapper{
@@ -6,16 +6,24 @@ $max-page-width: 900px;
     justify-content: center;
     background-color: grey;
   }
+
+  .wrapper2{
+    max-width: base.$max-page-width;
+    min-height: 100vh;
+    background-color: white;
+  }
   
   .container{
+    //padding: 0 $container-padding;
     padding: $container-padding;
-    max-width: $max-page-width;
-    min-height: 720px;
+    //max-width: base.$max-page-width;
+    //min-height: 720px;
+    //min-height: 100vh;
     background-color: white;
   }
 
 
-  .langSwitch{
+  .lang-switch{
     font-size: 1.2rem;
     &::before{
       // float: left;
@@ -47,7 +55,7 @@ $max-page-width: 900px;
     justify-content: flex-end;
     align-items: flex-end;
     margin-bottom: 1rem;
-    &Item{
+    &-item{
       padding: 0 10px;
     }
   }
@@ -63,7 +71,7 @@ $max-page-width: 900px;
 
   .main{
     //min-height: 100vh;
-    &Container{
+    &-container{
       padding-left: $aside-width;
     }
   }

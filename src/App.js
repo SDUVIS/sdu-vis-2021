@@ -51,27 +51,28 @@ function App() {
   const { title, year } = localeData;
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <header className={styles.header}>
+    <div className={styles["wrapper"]}>
+    <div className={styles["wrapper2"]}>
+      <div className={styles["container"]}>
+        <header className={styles["header"]}>
           <a href="/">
             <strong>SDU</strong> {title} ({year})
           </a>
         </header>
         <BrowserRouter>
-          <nav className={styles.nav}>
-            <Link to="/" className={styles.navItem}>
+          <nav className={styles["nav"]}>
+            <Link to="/" className={styles["nav-item"]}>
               Home
             </Link>
-            <Link to="/projects" className={styles.navItem}>
+            <Link to="/projects" className={styles["nav-item"]}>
               Projects
             </Link>
-            <Link to="/demos" className={styles.navItem}>
+            <Link to="/demos" className={styles["nav-item"]}>
               Demos
             </Link>
             <a
               href="#"
-              className={styles.navItem + " " + styles.langSwitch}
+              className={styles["nav-item"] + " " + styles["lang-switch"]}
               onClick={() => {
                 setIsEnglish(!isEnglish);
               }}
@@ -79,16 +80,16 @@ function App() {
               {isEnglish ? "中文" : "English"}
             </a>
           </nav>
-          <main className={styles.main}>
+          <main className={styles["main"]}>
             <Switch>
               <Route path="/projects">
-                <aside className={styles.aside}>
+                <aside className={styles["aside"]}>
                   <Profiles
                     profiles={localeProfiles}
                     localeData={localeData}
                   ></Profiles>
                 </aside>
-                <div className={styles.mainContainer}>
+                <div className={styles["main-container"]}>
                   <Projects
                     projectsData={localeProjects}
                     localeData={localeData}
@@ -96,13 +97,13 @@ function App() {
                 </div>
               </Route>
               <Route path="/demos">
-                <aside className={styles.aside}>
+                <aside className={styles["aside"]}>
                   <Profiles
                     profiles={localeProfiles}
                     localeData={localeData}
                   ></Profiles>
                 </aside>
-                <div className={styles.mainContainer}>
+                <div className={styles["main-container"]}>
                   <Demos
                     data={demosData}
                     localeData={localeData}
@@ -111,13 +112,13 @@ function App() {
               </Route>
               <Route path="/">
                 <Gallery galleryData={galleryData}></Gallery>
-                <aside className={styles.aside}>
+                <aside className={styles["aside"]}>
                   <Profiles
                     profiles={localeProfiles}
                     localeData={localeData}
                   ></Profiles>
                 </aside>
-                <div className={styles.mainContainer}>
+                <div className={styles["main-container"]}>
                   <Home
                     referenceData={referenceData}
                     localeData={localeData}
@@ -134,6 +135,7 @@ function App() {
           </a>{" "}
           - <a href="https://www.sdu.edu.cn/">Shandong University</a>
         </footer>
+      </div>
       </div>
     </div>
   );

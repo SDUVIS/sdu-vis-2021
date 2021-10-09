@@ -1,8 +1,8 @@
-import {gallery as galleryClass, galleryImg as galleryImgClass} from "./Gallery.module.scss"
+import styles from "./Gallery.module.scss"
 
 function Gallery({galleryData}){
-  return <div className={galleryClass}>
-    {galleryData.map(imgData => <img src={imgData.src} className={galleryImgClass} alt={imgData.title}/>)}
+  return <div className={styles["gallery"]}>
+    {galleryData.map(imgData => <img src={imgData.src} className={styles["gallery-img"]} alt={imgData.title}/>)}
   </div>
 }
 
