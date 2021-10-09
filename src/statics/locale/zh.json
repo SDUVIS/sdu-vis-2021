@@ -42,5 +42,10 @@
     "url": "地址",
     "vis": "更多参考资料详见：",
     "instructors": "指导老师",
-    "assistants": "助教"
+    "assistants": "助教",
+    "projects": "课程项目",
+    "order": "序号",
+    "content": "内容",
+    "startDate": "实验日期",
+    "endDate": "截止日期"
 }

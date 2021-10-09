@@ -1,20 +1,11 @@
-import {
-  wrapper as wrapperClass,
-  container as containerClass,
-  header as headerClass,
-  nav as navClass,
-  langSwitch as langSwitchClass,
-  navItem as navItemClass,
-  aside as asideClass,
-  main as mainClass,
-  footer as footerClass,
-} from "./App.module.scss";
+import styles from "./App.module.scss";
 
 import enLocale from "./statics/locale/en.json";
 import zhLocale from "./statics/locale/zh.json";
-import profiles from "./statics/profiles.json";
+import profilesData from "./statics/profiles.json";
 import referenceData from "./statics/references.json";
 import galleryData from "./statics/gallery.json";
+import projectsData from "./statics/projects.json";
 
 import Home from "./components/Home/Home";
 import Projects from "./components/Projects/Projects";
@@ -26,44 +17,60 @@ import NavAside from "./components/NavAside/NavAside";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useState, createContext } from "react";
 
+function extractLocaleProjectsData(data, lang = "en", sublang = "zh") {
+  return Object.fromEntries(
+    Object.entries(data).map(([key, value]) => [
+      key,
+      value[lang] ? value[lang] : value[sublang],
+    ])
+  );
+}
+
+function extractLocaleProfilesData(data, lang = "en", sublang = "zh") {
+  return Object.fromEntries(
+    Object.entries(data).map(([key, value]) => [
+      key,
+      value.map(value => value[lang] ? value[lang] : value[sublang]),
+    ])
+  );
+}
+
 function App() {
   const [isEnglish, setIsEnglish] = useState(true);
   const localeData = isEnglish ? enLocale : zhLocale;
-  const localeProfiles = Object.fromEntries(
-    isEnglish
-      ? Object.entries(profiles).map(([post, persons]) => [
-          post,
-          persons.map((person) => person.en),
-        ])
-      : Object.entries(profiles).map(([post, persons]) => [
-          post,
-          persons.map((person) => person.zh),
-        ])
+  const localeProfiles = extractLocaleProfilesData(
+    profilesData,
+    isEnglish ? "en" : "zh"
   );
+  const localeProjects = extractLocaleProjectsData(
+    projectsData,
+    isEnglish ? "en" : "zh"
+  );
+
   const { title, year } = localeData;
 
   return (
-    <div className={wrapperClass}>
-      <div className={containerClass}>
-        <header className={headerClass}>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <header className={styles.header}>
           <a href="/">
             <strong>SDU</strong> {title} ({year})
           </a>
         </header>
         <BrowserRouter>
-          <nav className={navClass}>
-            <Link to="/" className={navItemClass}>
+          <nav className={styles.nav}>
+            <Link to="/" className={styles.navItem}>
               Home
             </Link>
-            <Link to="/projects" className={navItemClass}>
+            <Link to="/projects" className={styles.navItem}>
               Projects
             </Link>
-            <Link to="/demos" className={navItemClass}>
+            <Link to="/demos" className={styles.navItem}>
               Demos
             </Link>
             <a
               href="#"
-              className={navItemClass + " " + langSwitchClass}
+              className={styles.navItem + " " + styles.langSwitch}
               onClick={() => {
                 setIsEnglish(!isEnglish);
               }}
@@ -71,41 +78,56 @@ function App() {
               {isEnglish ? "中文" : "English"}
             </a>
           </nav>
-          <Gallery galleryData={galleryData}></Gallery>
-          <aside className={asideClass}>
-            <Profiles
-              profiles={localeProfiles}
-              localeData={localeData}
-            ></Profiles>
+          <main className={styles.main}>
             <Switch>
               <Route path="/projects">
-                <NavAside></NavAside>
+                <aside className={styles.aside}>
+                  <Profiles
+                    profiles={localeProfiles}
+                    localeData={localeData}
+                  ></Profiles>
+                </aside>
+                <div className={styles.mainContainer}>
+                  <Projects
+                    projectsData={localeProjects}
+                    localeData={localeData}
+                  ></Projects>
+                </div>
               </Route>
               <Route path="/demos">
-                <NavAside></NavAside>
-              </Route>
-            </Switch>
-            <br />
-          </aside>
-          <main className={mainClass}>
-            <Switch>
-              <Route path="/projects">
-                <Projects></Projects>
-              </Route>
-              <Route path="/demos">
-                <Demos></Demos>
+                <aside className={styles.aside}>
+                  <Profiles
+                    profiles={localeProfiles}
+                    localeData={localeData}
+                  ></Profiles>
+                </aside>
+                <div className={styles.mainContainer}>
+                  <Demos
+                    projectsData={projectsData}
+                    localeData={localeData}
+                  ></Demos>
+                </div>
               </Route>
               <Route path="/">
-                <Home
-                  referenceData={referenceData}
-                  localeData={localeData}
-                ></Home>
+                <Gallery galleryData={galleryData}></Gallery>
+                <aside className={styles.aside}>
+                  <Profiles
+                    profiles={localeProfiles}
+                    localeData={localeData}
+                  ></Profiles>
+                </aside>
+                <div className={styles.mainContainer}>
+                  <Home
+                    referenceData={referenceData}
+                    localeData={localeData}
+                  ></Home>
+                </div>
               </Route>
             </Switch>
           </main>
         </BrowserRouter>
 
-        <footer className={footerClass}>
+        <footer className={styles.footer}>
           <a href="http://www.cs.en.qd.sdu.edu.cn/">
             School of Computer Sicence and Technology
           </a>{" "}

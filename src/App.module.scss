@@ -62,13 +62,16 @@ $max-page-width: 900px;
   }
 
   .main{
-    padding-left: $aside-width;
     //min-height: 100vh;
+    &Container{
+      padding-left: $aside-width;
+    }
   }
 
   .footer{
     display: flex;
     justify-content: flex-end;
+    margin-top: 1em;
     padding-left: $aside-width;
   }
 

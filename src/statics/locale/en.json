@@ -40,6 +40,11 @@
     "fileName": "File Name",
     "url": "URL",
     "vis": "For more reference materials, see:",
-    "instructors": "INSTRUCTORS",
-    "assistants": "ASSISTANTS"
+    "instructors": "instructors",
+    "assistants": "assistants",
+    "projects": "projects",
+     "order": "order",
+    "content": "content",
+    "startDate": "start date",
+    "endDate": "end date"
 }
