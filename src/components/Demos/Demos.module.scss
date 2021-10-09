@@ -1,0 +1,23 @@
+.demos{
+  padding-top: 1em;
+}
+
+.figures-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.figure{
+  overflow: hidden;
+  height: 12vw;
+  width: 20vw;
+  padding: 1vw;
+  overflow: hidden;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  box-sizing: border-box;
+  &:hover{
+    border-color: darkgrey;
+  }
+}

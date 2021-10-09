@@ -1,0 +1,51 @@
+[
+  {
+    "name": "实验一",
+    "figures": [
+      {
+        "path": "/demos/实验一/1.png"
+      },
+      {
+        "path": "/demos/实验一/2.png"
+      },
+      {
+        "path": "/demos/实验一/3.png"
+      },
+      {
+        "path": "/demos/实验一/4.png"
+      },
+      {
+        "path": "/demos/实验一/5.png"
+      },
+      {
+        "path": "/demos/实验一/6.png"
+      }
+    ]
+  },
+  {
+    "name": "实验二",
+    "figures": [
+      {
+        "path": "/demos/实验二/1.png"
+      },
+      {
+        "path": "/demos/实验二/2.png"
+      },
+      {
+        "path": "/demos/实验二/3.png"
+      },
+      {
+        "path": "/demos/实验二/4.png"
+      },
+      {
+        "path": "/demos/实验二/5.png"
+      },
+      {
+        "path": "/demos/实验二/6.png"
+      },
+      {
+        "path": "/demos/实验二/7.png"
+      }
+    ]
+  }
+]

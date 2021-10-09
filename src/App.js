@@ -4,8 +4,9 @@ import enLocale from "./statics/locale/en.json";
 import zhLocale from "./statics/locale/zh.json";
 import profilesData from "./statics/profiles.json";
 import referenceData from "./statics/references.json";
-import galleryData from "./statics/gallery.json";
 import projectsData from "./statics/projects.json";
+import galleryData from "./statics/gallery.json";
+import demosData from "./statics/demos.json";
 
 import Home from "./components/Home/Home";
 import Projects from "./components/Projects/Projects";
@@ -103,7 +104,7 @@ function App() {
                 </aside>
                 <div className={styles.mainContainer}>
                   <Demos
-                    projectsData={projectsData}
+                    data={demosData}
                     localeData={localeData}
                   ></Demos>
                 </div>
