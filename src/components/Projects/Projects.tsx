@@ -1,10 +1,18 @@
 import styles from "./Projects.module.scss";
 import {v4 as uuid} from "uuid";
-import { useContext } from "react";
-import { localeContext } from "../../context/localeContext";
+import React, { useContext } from "react";
+import { localeContext } from "../../context/localeContext.js";
 
+type ProjectData = {
+  order: number,
+  content: string,
+  start: string,
+  end: string
+}
 
-const Project = ({order, content, start, end}) => (
+type ProjectProp = ProjectData;
+
+const Project: React.FC<ProjectProp> = ({order, content, start, end}) => (
   <tr>
     <th scope="row">{order}</th>
     <td dangerouslySetInnerHTML={{__html: content}}></td>
@@ -13,7 +21,7 @@ const Project = ({order, content, start, end}) => (
   </tr>
 )
 
-function Projects() {
+const Projects: React.FC<{}> = () => {
   const {locale, projects} = useContext(localeContext)
   return (
     <div className={styles['main-container']}>
@@ -27,7 +35,7 @@ function Projects() {
           </tr>
         </thead>
         <tbody>
-          {projects.data.map((data, i) => <Project key={uuid()} order={i+1} content={data.content} start={data.start} end={data.end}/>)}
+          {projects.data.map((data: ProjectData , i: number) => <Project key={uuid()} order={i+1} content={data.content} start={data.start} end={data.end}/>)}
         </tbody>
         <tfoot></tfoot>
       </table>

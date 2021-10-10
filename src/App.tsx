@@ -7,15 +7,14 @@ import Gallery from "./components/Gallery/Gallery";
 import Profiles from "./components/Profiles/Profiles";
 
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import { useState } from "react";
-import { localeContext, localeThemes } from "./context/localeContext";
+import React, { useState } from "react";
+import { localeContext, localeThemes } from "./context/localeContext.js";
 
-function App() {
+const App: React.FC<{}> = () => {
   const [isEnglish, setIsEnglish] = useState(true);
   const localeTheme = isEnglish ? localeThemes.en : localeThemes.zh;
-  const { locale, description} = localeTheme;
+  const { locale, description } = localeTheme;
   const { title, year } = description;
-
   return (
     <div className={styles["wrapper"]}>
       <div className={styles["wrapper2"]}>
@@ -50,7 +49,7 @@ function App() {
                 <Switch>
                   <Route path="/projects">
                     <aside className={styles["aside"]}>
-                      <Profiles></Profiles>
+                      <Profiles />
                     </aside>
                     <div className={styles["main-container"]}>
                       <Projects></Projects>
@@ -58,19 +57,19 @@ function App() {
                   </Route>
                   <Route path="/demos">
                     <aside className={styles["aside"]}>
-                      <Profiles></Profiles>
+                      <Profiles />
                     </aside>
                     <div className={styles["main-container"]}>
-                      <Demos/>
+                      <Demos />
                     </div>
                   </Route>
                   <Route path="/">
                     <Gallery></Gallery>
                     <aside className={styles["aside"]}>
-                      <Profiles></Profiles>
+                      <Profiles />
                     </aside>
                     <div className={styles["main-container"]}>
-                      <Home></Home>
+                      <Home />
                     </div>
                   </Route>
                 </Switch>

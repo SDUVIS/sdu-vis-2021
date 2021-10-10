@@ -1,10 +1,24 @@
 import { v4 as uuid } from "uuid";
-import { localeContext } from "../../context/localeContext";
+import { localeContext } from "../../context/localeContext.js";
 import { useContext } from "react";
 
-function ReferenceItem({ datum }) {
+type ReferenceItem = {
+    name: string;
+    authors: string[];
+    pub: string;
+    pubYear: number;
+    chinese?: undefined;
+} | {
+    name: string;
+    authors: string[];
+    chinese: string;
+    pub: string;
+    pubYear: number;
+}
+
+const ReferenceItem: React.FC<{datum: ReferenceItem}> = ({ datum }) => {
   const { locale } = useContext(localeContext);
-  const { name, authors, chineseName, pub, pubYear } = datum;
+  const { name, authors, chinese, pub, pubYear } = datum;
   return (
     <ul>
       <em>{name}</em>
@@ -16,8 +30,8 @@ function ReferenceItem({ datum }) {
         {locale.pub}:&nbsp;&nbsp;
         {pub}
       </li>
-      {chineseName && locale.chineseName ? (
-        <li>{locale.chineseName}:&nbsp;&nbsp; chineseName</li>
+      {chinese? (
+        <li>{"中文名"}:&nbsp;&nbsp; {chinese}</li>
       ) : null}
       <li>
         {locale.pubYear}:&nbsp;&nbsp;
@@ -51,7 +65,7 @@ function Home() {
         <h2>{aims}</h2>
         <hr />
         <ul>
-          {aimContents.map((content) => (
+          {aimContents.map((content: string) => (
             <li key={uuid()}>{content}</li>
           ))}
         </ul>
@@ -61,7 +75,7 @@ function Home() {
         <hr />
         <p>{requestContentDesc}</p>
         <ul>
-          {requestContents.map((content) => (
+          {requestContents.map((content: string) => (
             <li key={uuid()}>{content}</li>
           ))}
         </ul>
