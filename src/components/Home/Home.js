@@ -1,42 +1,42 @@
 import { v4 as uuid } from "uuid";
+import { localeContext } from "../../context/localeContext";
+import { useContext } from "react";
 
-function ReferenceItem({ datum, localeData }) {
+function ReferenceItem({ datum }) {
+  const { locale } = useContext(localeContext);
   const { name, authors, chineseName, pub, pubYear } = datum;
   return (
     <ul>
       <em>{name}</em>
       <li>
-        {localeData.authors}:&nbsp;&nbsp;
+        {locale.authors}:&nbsp;&nbsp;
         {authors.join(", ")}
       </li>
       <li>
-        {localeData.pub}:&nbsp;&nbsp;
+        {locale.pub}:&nbsp;&nbsp;
         {pub}
       </li>
-      {chineseName&&localeData.chineseName ? <li>
-        {localeData.chineseName}:&nbsp;&nbsp;
-        chineseName
-      </li> : null}
+      {chineseName && locale.chineseName ? (
+        <li>{locale.chineseName}:&nbsp;&nbsp; chineseName</li>
+      ) : null}
       <li>
-        {localeData.pubYear}:&nbsp;&nbsp;
+        {locale.pubYear}:&nbsp;&nbsp;
         {pubYear}
       </li>
     </ul>
   );
 }
 
-function Home({ descriptionData, referenceData, localeData }) {
+function Home() {
+  const {locale, description, references} = useContext(localeContext);
+  const { courseDesc, aims, request, reference } = locale;
   const {
-    courseDesc,
-    aims,
-    request,
-    reference,
-    authors,
-    chineseName,
-    pub,
-    pubYear,
-  } = localeData;
-  const {couseIntro: courseIntroContent, courseDesc: courseDescContent, aims: aimContents, requestDesc: requestContentDesc, requestContents: requestContents} = descriptionData;
+    couseIntro: courseIntroContent,
+    courseDesc: courseDescContent,
+    aims: aimContents,
+    requestDesc: requestContentDesc,
+    requestContents,
+  } = description;
   return (
     <div>
       <section>
@@ -70,14 +70,11 @@ function Home({ descriptionData, referenceData, localeData }) {
         <h2>{reference}</h2>
         <hr />
         <ul>
-          {referenceData.map((datum) => (
+          {references.map((datum) => (
             <li key={uuid()}>
               {" "}
-              <ReferenceItem
-                datum={datum}
-                localeData ={localeData}
-              ></ReferenceItem>
-              <br/>
+              <ReferenceItem datum={datum}></ReferenceItem>
+              <br />
             </li>
           ))}
         </ul>

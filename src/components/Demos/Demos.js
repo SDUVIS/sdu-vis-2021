@@ -1,7 +1,9 @@
 import styles from "./Demos.module.scss";
-import {v4 as uuid} from "uuid";
+import { v4 as uuid } from "uuid";
+import { localeContext } from "../../context/localeContext";
+import { useContext } from "react";
 
-function Experiment({data, localeData}){
+function Experiment({data}){
   const {name, figures} = data;
   return <section>
     <h3>{name}</h3>
@@ -10,9 +12,10 @@ function Experiment({data, localeData}){
   </section>
 }
 
-function Demos({data, localeData}){
+function Demos(){
+  const { demos } = useContext(localeContext);
   return <div className={styles.demos}>
-    {data.map(d => <Experiment key={uuid()} data={d} localeData={localeData}/>)}
+    {demos.map(demo => <Experiment key={uuid()} data={demo}/>)}
     <br/>
   </div>;
 }

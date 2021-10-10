@@ -1,7 +1,7 @@
 import styles from "./Projects.module.scss";
-import {capitalCase} from "change-case";
 import {v4 as uuid} from "uuid";
-import React from "react";
+import { useContext } from "react";
+import { localeContext } from "../../context/localeContext";
 
 
 const Project = ({order, content, start, end}) => (
@@ -13,20 +13,21 @@ const Project = ({order, content, start, end}) => (
   </tr>
 )
 
-function Projects({ localeData, projectsData }) {
+function Projects() {
+  const {locale, projects} = useContext(localeContext)
   return (
     <div className={styles['main-container']}>
       <table className={styles.table}>
         <thead>
           <tr>
-            <th scope="col">{localeData.order.toLocaleUpperCase()}</th>
-            <th scope="col">{localeData.content.toLocaleUpperCase()}</th>
-            <th scope="col">{localeData.startDate.toLocaleUpperCase()}</th>
-            <th scope="col">{localeData.endDate.toLocaleUpperCase()}</th>
+            <th scope="col">{locale.order.toLocaleUpperCase()}</th>
+            <th scope="col">{locale.content.toLocaleUpperCase()}</th>
+            <th scope="col">{locale.startDate.toLocaleUpperCase()}</th>
+            <th scope="col">{locale.endDate.toLocaleUpperCase()}</th>
           </tr>
         </thead>
         <tbody>
-          {projectsData.data.map((data, i) => <Project key={uuid()} order={i+1} content={data.content} start={data.start} end={data.end}/>)}
+          {projects.data.map((data, i) => <Project key={uuid()} order={i+1} content={data.content} start={data.start} end={data.end}/>)}
         </tbody>
         <tfoot></tfoot>
       </table>
