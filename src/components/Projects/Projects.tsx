@@ -1,6 +1,6 @@
 import styles from "./Projects.module.scss";
 import {v4 as uuid} from "uuid";
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import { localeContext } from "../../context/localeContext.js";
 
 type ProjectData = {
@@ -35,7 +35,7 @@ const Projects: React.FC<{}> = () => {
           </tr>
         </thead>
         <tbody>
-          {projects.data.map((data: ProjectData , i: number) => <Project key={uuid()} order={i+1} content={data.content} start={data.start} end={data.end}/>)}
+          {projects.data.map((data: ProjectData , i: number) => <Project key={i} order={i+1} content={data.content} start={data.start} end={data.end}/>)}
         </tbody>
         <tfoot></tfoot>
       </table>
@@ -43,4 +43,4 @@ const Projects: React.FC<{}> = () => {
   );
 }
 
-export default Projects;
+export default memo(Projects);

@@ -4,7 +4,7 @@
   .wrapper{
     display: flex;
     justify-content: center;
-    background-color: grey;
+    background-color: base.$background-color;
   }
 
   .wrapper2{
@@ -36,17 +36,7 @@
   }
 
   .header {
-    color: #492a7c;
     margin-top: 1rem;
-    font-size: 2rem;
-    font-family: "Avenir", Verdana;
-    a {
-      text-decoration: none;
-      &:hover{
-        color: #7533f4;
-        text-decoration: underline;
-      }
-    }
   }
 
   .nav{
@@ -61,7 +51,7 @@
   }
 
   .aside{
-    @media (min-width: 450px){
+    @media (min-width: base.$device-width){
       font-size: 0.8rem;
     }
     font-size: 0.6rem;
@@ -77,21 +67,19 @@
   }
 
   .footer{
-    display: flex;
-    justify-content: flex-end;
     margin-top: 2em;
     padding-left: $aside-width;
   }
 
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: base.$device-width) {
   $aside-width: 6rem;
   $container-padding: 0.5rem 1rem;
   @include styling($aside-width, $container-padding)
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: base.$device-width) {
   $aside-width: 9rem;
   $container-padding: 1rem 2rem;
   @include styling($aside-width, $container-padding)

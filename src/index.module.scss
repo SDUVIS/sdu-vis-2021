@@ -1,8 +1,10 @@
-html {
-  background-color: grey;
+@use "base.module" as base;
+
+:global(html) {
+  background-color: base.$background-color;
 }
 
-body {
+:global(body) {
   max-width: 800;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,19 +14,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+:global(code) {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-strong, h1, h2, h3, h4, h5, h6{
-  color: #492a7c;
+:global(strong, h1, h2, h3, h4, h5, h6){
+  color: base.$dark-important-color;
 }
 
-a {
-  color: #7533f4
+:global(a) {
+  color: base.$light-important-color;
 }
 
-a:hover {
-  color: rgb(244, 176, 20)
+:global(a:hover) {
+  color: rgb(244, 176, 20);
 }

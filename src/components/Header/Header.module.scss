@@ -1,0 +1,13 @@
+.header{
+    color: #492a7c;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-family: "Avenir", Verdana;
+    a {
+      text-decoration: none;
+      &:hover{
+        color: #7533f4;
+        text-decoration: underline;
+      }
+    }
+}

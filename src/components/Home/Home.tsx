@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 import { localeContext } from "../../context/localeContext.js";
-import { useContext } from "react";
+import { useContext, memo } from "react";
 
 type ReferenceItem = {
     name: string;
@@ -65,8 +65,8 @@ function Home() {
         <h2>{aims}</h2>
         <hr />
         <ul>
-          {aimContents.map((content: string) => (
-            <li key={uuid()}>{content}</li>
+          {aimContents.map((content: string, i: number) => (
+            <li key={i}>{content}</li>
           ))}
         </ul>
       </section>
@@ -84,8 +84,8 @@ function Home() {
         <h2>{reference}</h2>
         <hr />
         <ul>
-          {references.map((datum) => (
-            <li key={uuid()}>
+          {references.map((datum, i) => (
+            <li key={i}>
               {" "}
               <ReferenceItem datum={datum}></ReferenceItem>
               <br />
@@ -97,4 +97,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default memo(Home);

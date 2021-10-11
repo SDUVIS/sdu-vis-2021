@@ -5,25 +5,24 @@ import Projects from "./components/Projects/Projects";
 import Demos from "./components/Demos/Demos";
 import Gallery from "./components/Gallery/Gallery";
 import Profiles from "./components/Profiles/Profiles";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useCallback, useMemo, memo } from "react";
 import { localeContext, localeThemes } from "./context/localeContext.js";
 
 const App: React.FC<{}> = () => {
   const [isEnglish, setIsEnglish] = useState(true);
   const localeTheme = isEnglish ? localeThemes.en : localeThemes.zh;
-  const { locale, description } = localeTheme;
-  const { title, year } = description;
+  const changeLocale = useCallback(() => setIsEnglish(!isEnglish), [isEnglish]);
   return (
     <div className={styles["wrapper"]}>
       <div className={styles["wrapper2"]}>
         <div className={styles["container"]}>
           <localeContext.Provider value={localeTheme}>
             <header className={styles["header"]}>
-              <a href="/">
-                <strong>SDU</strong> {title} ({year})
-              </a>
+              <Header />
             </header>
 
             <BrowserRouter>
@@ -40,48 +39,40 @@ const App: React.FC<{}> = () => {
                 <a
                   href="#"
                   className={styles["nav-item"] + " " + styles["lang-switch"]}
-                  onClick={() => setIsEnglish(!isEnglish)}
+                  onClick={changeLocale}
                 >
                   {isEnglish ? "中文" : "English"}
                 </a>
               </nav>
               <main className={styles["main"]}>
-                <Switch>
-                  <Route path="/projects">
-                    <aside className={styles["aside"]}>
-                      <Profiles />
-                    </aside>
-                    <div className={styles["main-container"]}>
-                      <Projects></Projects>
-                    </div>
-                  </Route>
-                  <Route path="/demos">
-                    <aside className={styles["aside"]}>
-                      <Profiles />
-                    </aside>
-                    <div className={styles["main-container"]}>
+                <div>
+                  <Switch>
+                    <Route exact path="/">
+                      <Gallery />
+                    </Route>
+                  </Switch>
+                </div>
+                <aside className={styles["aside"]}>
+                  <Profiles />
+                </aside>
+                <div className={styles["main-container"]}>
+                  <Switch>
+                    <Route path="/projects">
+                      <Projects/>
+                    </Route>
+                    <Route path="/demos">
                       <Demos />
-                    </div>
-                  </Route>
-                  <Route path="/">
-                    <Gallery></Gallery>
-                    <aside className={styles["aside"]}>
-                      <Profiles />
-                    </aside>
-                    <div className={styles["main-container"]}>
+                    </Route>
+                    <Route exact path="/">
                       <Home />
-                    </div>
-                  </Route>
-                </Switch>
+                    </Route>
+                  </Switch>
+                </div>
               </main>
             </BrowserRouter>
 
             <footer className={styles.footer}>
-              <hr />
-              <a href="http://www.cs.en.qd.sdu.edu.cn/">
-                School of Computer Sicence and Technology
-              </a>{" "}
-              - <a href="https://www.sdu.edu.cn/">Shandong University</a>
+              <Footer />
             </footer>
           </localeContext.Provider>
         </div>
