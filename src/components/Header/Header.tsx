@@ -4,11 +4,12 @@ import { localeContext } from "../../context/localeContext.js";
 import React, { useContext, memo } from "react";
 
 const Header: React.FC<{}> = () => {
-  const { description } = useContext(localeContext);
+  const { locale, description } = useContext(localeContext);
+  const { shandongUniversityAbbr } = locale;
   const { title, year } = description;
   return (<div className={styles["header"]}>
                   <a href="/">
-                <strong>SDU</strong> {title} ({year})
+                <strong>{shandongUniversityAbbr}</strong> {title} ({year})
               </a>
   </div>)
 }

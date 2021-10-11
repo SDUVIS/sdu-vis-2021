@@ -4,12 +4,12 @@ import { localeContext } from "../../context/localeContext.js";
 import React, { useContext, memo } from "react";
 
 const Footer: React.FC<{}> = () => {
-  const { description } = useContext(localeContext);
-  const { title, year } = description;
+  const { locale } = useContext(localeContext);
+  const { schoolOfComputerSicenceAndTechnology, shandongUniversity} = locale;
   return (<div className={styles["footer"]}>
-    <a href="http://www.cs.en.qd.sdu.edu.cn/">School of Computer Sicence and Technology</a>
+    <a href="http://www.cs.en.qd.sdu.edu.cn/">{schoolOfComputerSicenceAndTechnology}</a>
     &nbsp;-&nbsp;
-    <a href="https://www.sdu.edu.cn/">Shandong University</a></div>);
+    <a href="https://www.sdu.edu.cn/">{shandongUniversity}</a></div>);
 }
 
 export default memo(Footer);

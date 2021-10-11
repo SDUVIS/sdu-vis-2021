@@ -2,7 +2,7 @@ import { v4 as uuid } from "uuid";
 import { localeContext } from "../../context/localeContext.js";
 import { useContext, memo } from "react";
 
-type ReferenceItem = {
+type ReferenceItemType = {
     name: string;
     authors: string[];
     pub: string;
@@ -16,7 +16,7 @@ type ReferenceItem = {
     pubYear: number;
 }
 
-const ReferenceItem: React.FC<{datum: ReferenceItem}> = ({ datum }) => {
+const ReferenceItem: React.FC<{datum: ReferenceItemType}> = ({ datum }) => {
   const { locale } = useContext(localeContext);
   const { name, authors, chinese, pub, pubYear } = datum;
   return (

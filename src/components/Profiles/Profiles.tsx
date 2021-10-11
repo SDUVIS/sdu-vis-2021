@@ -10,11 +10,11 @@ const Profiles: React.FC<{}> = () => {
   const {instructors: instructorProfiles, assistants: assistantProfiles} = profiles;
   return (<div className={styles.profile}>
     <section>
-      <h5>{capitalCase(instructors) || instructors}</h5>
+      <h3>{capitalCase(instructors) || instructors}</h3>
       {instructorProfiles.map((profile: string, i: number) => <div key={i}>{profile}</div>)}
     </section>
     <section>
-      <h5>{capitalCase(assistants) || assistants}</h5>
+      <h3>{capitalCase(assistants) || assistants}</h3>
       {assistantProfiles.map((profile: string, i: number) => <div key={i}>{profile}</div>)}
     </section>
     </div>)

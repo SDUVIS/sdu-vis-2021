@@ -3,7 +3,7 @@ declare module rawLocale {
     export interface Locale {
         shandongUniversity: string;
         shandongUniversityAbbr: string;
-        homePage: string;
+        home: string;
         projectList: string;
         resultList: string;
         courseResources: string;

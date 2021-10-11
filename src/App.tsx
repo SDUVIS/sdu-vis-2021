@@ -8,14 +8,18 @@ import Profiles from "./components/Profiles/Profiles";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
+import { localeContext, localeThemes } from "./context/localeContext.js";
+
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import React, { useState, useCallback } from "react";
-import { localeContext, localeThemes } from "./context/localeContext.js";
+import {capitalCase} from "change-case";
 
 const App: React.FC<{}> = () => {
   const [isEnglish, setIsEnglish] = useState(true);
   const localeTheme = isEnglish ? localeThemes.en : localeThemes.zh;
   const changeLocale = useCallback(() => setIsEnglish(!isEnglish), [isEnglish]);
+  const { locale } = localeTheme;
+  const { home, projects, demos} = locale;
   return (
     <div className={styles["wrapper"]}>
       <div className={styles["wrapper2"]}>
@@ -28,13 +32,13 @@ const App: React.FC<{}> = () => {
             <BrowserRouter>
               <nav className={styles["nav"]}>
                 <Link to="/" className={styles["nav-item"]}>
-                  Home
+                  {capitalCase(home) || home}
                 </Link>
                 <Link to="/projects" className={styles["nav-item"]}>
-                  Projects
+                  {capitalCase(projects) || projects}
                 </Link>
                 <Link to="/demos" className={styles["nav-item"]}>
-                  Demos
+                  {capitalCase(demos) || demos}
                 </Link>
                 <a
                   href="#"
