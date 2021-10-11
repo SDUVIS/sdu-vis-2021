@@ -1,29 +1,39 @@
+@use "../../base.module" as base;
+
 .main-container{
   padding-top: 2em;
 }
 
 .table {
-    --bs-table-bg: transparent;
-    --bs-table-accent-bg: transparent;
-    --bs-table-striped-color: #212529;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
-    --bs-table-active-color: #212529;
-    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-    --bs-table-hover-color: #212529;
-    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
-    display: table;
+    // --bs-table-bg: transparent;
+    // --bs-table-accent-bg: transparent;
+    // --bs-table-striped-color: #212529;
+    // --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    // --bs-table-active-color: #212529;
+    // --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    // --bs-table-hover-color: #212529;
+    // --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    //display: table;
+    @media screen and (max-width: base.$device-width) {
+      //font-size: 0.4rem;
+    }
     text-indent: initial;
     border-spacing: 2px;
-    width: 100%;
+    max-width: 100%;
     margin-bottom: 1rem;
     color: #212529;
     vertical-align: top;
     border-color: #dee2e6;
     caption-side: bottom;
     border-collapse: collapse;
+    table-layout: fixed;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     td, th{
         border: 1px solid black;
+        word-wrap: break-word;
     }
 
     th[scope="col"]{
@@ -32,5 +42,17 @@
 
     th[scope="row"]{
       background-color: #eee;
+    }
+
+    tr>*:nth-child(1){
+      max-width: 100px;
+      color: red;
+    }
+    tr>*:nth-child(2){
+      word-break: break-all;
+    }
+    tr>*:nth-child(3), tr>*:nth-child(4){
+      max-width: 100px;
+      color: green;
     }
 }

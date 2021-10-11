@@ -1,31 +1,45 @@
 @use "../../base.module" as base;
 @use "sass:math";
 
-$figure-width: base.$max-page-width / 5;
-$figure-height: $figure-width * 0.6;
 
-.demos{
-  padding-top: 1em;
-}
-
-.figures-wrapper{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-}
-
-.figure{
-  overflow: hidden;
-  border-radius: 5%;
-  border-color: darkgray;
-  height: $figure-height;
-  width: $figure-width;
-  margin: 1%;
-  overflow: hidden;
-  border-width: 2px;
-  border-style: solid;
-  box-sizing: border-box;
-  &:hover{
-    border-color: black;
+@mixin styling($figure-width, $figure-height) {
+  .demos {
+    padding-top: 1em;
   }
+
+  .figures-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .figure {
+    overflow: hidden;
+    border-radius: 5%;
+    border-color: darkgray;
+    height: $figure-height;
+    width: $figure-width;
+    margin: 1%;
+    overflow: hidden;
+    border-width: 2px;
+    border-style: solid;
+    box-sizing: border-box;
+    &:hover {
+      border-color: black;
+    }
+  }
+}
+
+
+
+@media screen and (min-width: base.$device-width) {
+  $figure-width: math.div(base.$max-page-width, 5);
+  $figure-height: base.goldenSection($figure-width);
+  @include styling($figure-width, $figure-height)
+}
+
+@media screen and (max-width: base.$device-width) {
+  $figure-width: math.div(base.$max-page-width, 8);
+  $figure-height: base.goldenSection($figure-width);
+  @include styling($figure-width, $figure-height)
 }

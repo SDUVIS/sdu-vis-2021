@@ -5,6 +5,9 @@
 }
 
 :global(body) {
+  @media screen and (max-width: base.$device-width) {
+    font-size: 0.6rem;
+  }
   max-width: 800;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

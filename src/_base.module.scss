@@ -5,3 +5,7 @@ $device-width: 450px;
 $background-color: grey;
 $dark-important-color: #492a7c;
 $light-important-color: #7533f4;
+
+@function goldenSection($width){
+  @return $width * 0.618;
+}
