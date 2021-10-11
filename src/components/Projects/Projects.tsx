@@ -1,5 +1,5 @@
 import styles from "./Projects.module.scss";
-import {v4 as uuid} from "uuid";
+// import {v4 as uuid} from "uuid";
 import React, { useContext, memo } from "react";
 import { localeContext } from "../../context/localeContext.js";
 

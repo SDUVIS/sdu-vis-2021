@@ -1,4 +1,4 @@
-import {v4 as uuid} from "uuid";
+// import {v4 as uuid} from "uuid";
 import {capitalCase} from "change-case"
 import styles from "./Profiles.module.scss"
 import { localeContext } from "../../context/localeContext.js";

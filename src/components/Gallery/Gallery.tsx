@@ -1,5 +1,5 @@
 import styles from "./Gallery.module.scss"
-import {v4 as uuid} from "uuid"
+//import {v4 as uuid} from "uuid"
 import { localeContext } from "../../context/localeContext.js";
 import React, { useContext, memo} from "react";
 

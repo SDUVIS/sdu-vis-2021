@@ -9,7 +9,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import React, { useState, useCallback, useMemo, memo } from "react";
+import React, { useState, useCallback } from "react";
 import { localeContext, localeThemes } from "./context/localeContext.js";
 
 const App: React.FC<{}> = () => {

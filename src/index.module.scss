@@ -2,11 +2,8 @@
 
 :global(html) {
   background-color: base.$background-color;
-}
-
-:global(body) {
   @media screen and (max-width: base.$device-width) {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   max-width: 800;
   margin: 0;
@@ -22,7 +19,7 @@
     monospace;
 }
 
-:global(strong, h1, h2, h3, h4, h5, h6){
+:global(strong), :global(h6), :global(h5), :global(h4), :global(h3), :global(h2), :global(h1){
   color: base.$dark-important-color;
 }
 
