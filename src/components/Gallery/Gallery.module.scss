@@ -13,10 +13,11 @@
     overflow: hidden;
     border-width: 2px;
     border-style: solid;
-    border-color: white;
+    border-radius: 1px;
+    border-color: #eee;
     box-sizing: border-box;
     &:hover{
-      border-color: darkgrey;
+      border-color: #888;
     }
   }
 }
