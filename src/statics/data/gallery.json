@@ -9,7 +9,7 @@
   },
   {
     "title": "/src/statics/gallery",
-    "src": "/gallery/F2Bubbles-3.png"
+    "src": "/gallery/F2Bubbles.png"
   },
   {
     "title": "",
@@ -22,14 +22,6 @@
   {
     "title": "",
     "src": "/gallery/KD-cut.png"
-  },
-  {
-    "title": "",
-    "src": "/gallery/mnist.png"
-  },
-  {
-    "title": "",
-    "src": "/gallery/vis-selection_timeseries_2.png"
   },
   {
     "title": "",
