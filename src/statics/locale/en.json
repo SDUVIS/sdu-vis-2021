@@ -1,10 +1,12 @@
 {
+    "_lang": "en",
     "shandongUniversity": "Shandong University",
     "shandongUniversityAbbr": "SDU",
     "schoolOfComputerSicenceAndTechnology": "Shchool of Computer Science and Technology",
     "home": "home",
     "projects": "projects",
     "demos": "demos",
+    "list": "list",
     "projectList": "Teaching content and class hours",
     "resultList": "Results",
     "courseResources": "Resources",

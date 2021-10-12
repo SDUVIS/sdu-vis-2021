@@ -3,13 +3,13 @@
 @mixin styling($aside-width, $container-padding) {
   .wrapper{
     display: flex;
+    min-height: 100vh;
     justify-content: center;
     background-color: base.$background-color;
   }
 
   .wrapper2{
     max-width: base.$max-page-width;
-    min-height: 100vh;
     background-color: white;
   }
   

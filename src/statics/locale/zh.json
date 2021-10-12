@@ -1,10 +1,12 @@
 {
+    "_lang": "zh",
     "shandongUniversity": "山东大学",
     "shandongUniversityAbbr": "SDU",
-    "schoolOfComputerSicenceAndTechnology": "山东大学计算机科学与技术学院",
+    "schoolOfComputerSicenceAndTechnology": "计算机科学与技术学院",
     "home": "主页",
     "projects": "课程项目",
     "demos": "作业展示",
+    "list": "列表",
     "projectList": "教学内容及学时分配",
     "resultList": "课程章节",
     "courseResources": "课程资源",

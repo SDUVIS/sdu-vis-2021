@@ -12,7 +12,7 @@ import { localeContext, localeThemes } from "./context/localeContext.js";
 
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import React, { useState, useCallback } from "react";
-import {capitalCase} from "change-case";
+import {capitalCase} from "./helpers";
 
 const App: React.FC<{}> = () => {
   const [isEnglish, setIsEnglish] = useState(true);

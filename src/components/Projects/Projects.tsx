@@ -2,6 +2,8 @@ import styles from "./Projects.module.scss";
 // import {v4 as uuid} from "uuid";
 import React, { useContext, memo } from "react";
 import { localeContext } from "../../context/localeContext.js";
+import { capitalCase } from "change-case";
+import {} from "../../helpers"
 
 type ProjectData = {
   order: number,
@@ -21,10 +23,10 @@ const Project: React.FC<ProjectProp> = ({order, content, start, end}) => (
   </tr>
 )
 
-const Projects: React.FC<{}> = () => {
+const ProjectsTable: React.FC<{}> = () => {
   const {locale, projects} = useContext(localeContext)
   return (
-    <div className={styles['main-container']}>
+    <>
       <table className={styles.table}>
         <thead>
           <tr>
@@ -39,8 +41,18 @@ const Projects: React.FC<{}> = () => {
         </tbody>
         <tfoot></tfoot>
       </table>
-    </div>
+    </>
   );
+}
+
+const Projects:React.FC<{}> = () => {
+  const {locale } = useContext(localeContext)
+  const {projects, list} = locale;
+  const projectsListLocale = [projects, list].join(" ");
+  return (<div className={styles['main-container']}>
+    <h2>{capitalCase([projects, list].join(" ")) || projectsListLocale}</h2>
+    <ProjectsTable/>
+  </div>)
 }
 
 export default memo(Projects);
