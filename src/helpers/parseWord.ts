@@ -1,7 +1,5 @@
 import { capitalCase as originalCaptalCase } from "change-case";
 
-type Lang = "en" | "zh";
-
 export function combineEnWords(words: string[]): string {
   return words.join(" ");
 }
@@ -25,7 +23,7 @@ export function isEnglishWord(word: string): boolean {
  * @param word 
  * @returns 
  */
-export function capitalCase(word: string | string[], lang: Lang = "en"): string {
+export function capitalCase(word: string | string[], lang: string = "en"): string {
   if(typeof word === "string") return capitalCaseSingleWord(word);
   if(word.length <= 0) return "";
   if(lang === "en") return combineEnWords(word.map(capitalCaseSingleWord));

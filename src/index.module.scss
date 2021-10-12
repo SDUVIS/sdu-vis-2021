@@ -33,3 +33,7 @@
 :global(a:hover) {
   color: rgb(244, 176, 20);
 }
+
+:global(section) {
+  padding-bottom: 0.5em;
+}

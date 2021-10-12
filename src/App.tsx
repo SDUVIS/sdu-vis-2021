@@ -19,7 +19,7 @@ const App: React.FC<{}> = () => {
   const localeTheme = isEnglish ? localeThemes.en : localeThemes.zh;
   const changeLocale = useCallback(() => setIsEnglish(!isEnglish), [isEnglish]);
   const { locale } = localeTheme;
-  const { home, projects, demos} = locale;
+  const { home, projects, demos, _lang } = locale;
   return (
     <div className={styles["wrapper"]}>
       <div className={styles["wrapper2"]}>
@@ -32,13 +32,13 @@ const App: React.FC<{}> = () => {
             <BrowserRouter>
               <nav className={styles["nav"]}>
                 <Link to="/" className={styles["nav-item"]}>
-                  {capitalCase(home) || home}
+                  {capitalCase(home, _lang)}
                 </Link>
                 <Link to="/projects" className={styles["nav-item"]}>
-                  {capitalCase(projects) || projects}
+                  {capitalCase(projects, _lang)}
                 </Link>
                 <Link to="/demos" className={styles["nav-item"]}>
-                  {capitalCase(demos) || demos}
+                  {capitalCase(demos, _lang)}
                 </Link>
                 <a
                   href="#"
@@ -49,7 +49,7 @@ const App: React.FC<{}> = () => {
                 </a>
               </nav>
               <main className={styles["main"]}>
-                <div>
+                <div className={styles["gallery"]}>
                   <Switch>
                     <Route exact path="/">
                       <Gallery />

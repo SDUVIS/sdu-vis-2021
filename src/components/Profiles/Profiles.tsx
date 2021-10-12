@@ -6,15 +6,15 @@ import React, { useContext, memo } from "react";
 
 const Profiles: React.FC<{}> = () => {
   const {locale, profiles} = useContext(localeContext);
-  const {instructors, assistants} = locale;
+  const {instructors, assistants, _lang} = locale;
   const {instructors: instructorProfiles, assistants: assistantProfiles} = profiles;
   return (<div className={styles.profile}>
     <section>
-      <h3>{capitalCase(instructors)}</h3>
+      <h3>{capitalCase(instructors, _lang)}</h3>
       {instructorProfiles.map((profile: string, i: number) => <div key={i}>{profile}</div>)}
     </section>
     <section>
-      <h3>{capitalCase(assistants)}</h3>
+      <h3>{capitalCase(assistants, _lang)}</h3>
       {assistantProfiles.map((profile: string, i: number) => <div key={i}>{profile}</div>)}
     </section>
     </div>)

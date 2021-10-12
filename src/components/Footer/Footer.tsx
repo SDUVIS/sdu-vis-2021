@@ -6,11 +6,11 @@ import { capitalCase } from "../../helpers";
 
 const Footer: React.FC<{}> = () => {
   const { locale } = useContext(localeContext);
-  const { schoolOfComputerSicenceAndTechnology, shandongUniversity} = locale;
+  const { schoolOfComputerSicenceAndTechnology, shandongUniversity, _lang } = locale;
   return (<div className={styles["footer"]}>
-    <a href="http://www.cs.en.qd.sdu.edu.cn/">{capitalCase(schoolOfComputerSicenceAndTechnology)}</a>
+    <a href="http://www.cs.en.qd.sdu.edu.cn/">{capitalCase(schoolOfComputerSicenceAndTechnology, _lang)}</a>
     &nbsp;-&nbsp;
-    <a href="https://www.sdu.edu.cn/">{capitalCase(shandongUniversity)}</a></div>);
+    <a href="https://www.sdu.edu.cn/">{capitalCase(shandongUniversity, _lang)}</a></div>);
 }
 
 export default memo(Footer);

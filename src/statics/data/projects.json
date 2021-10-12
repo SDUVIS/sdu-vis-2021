@@ -15,10 +15,10 @@
   },
   "notes": {
     "zh": [
-      "可视化入门教程：https://github.com/Kaiyiwing/vis-tutorial-21",
-      " Web相关资料参考：https://www.w3school.com.cn/index.html https://developer.mozilla.org/zh-CN/",
+      "可视化入门教程：<a>https://github.com/Kaiyiwing/vis-tutorial-21</a>",
+      " Web相关资料参考：<a>https://www.w3school.com.cn/index.html https://developer.mozilla.org/zh-CN/</a>",
       "实验截止日期为实验报告的截止日期，截止日期的第二天会关闭对应实验的报告的上传文件夹。在实验日期的下一周上课时，教授可能会抽查同学上台分享自己制作的可视化。",
-      "实验网盘提交链接：https://icloud.qd.sdu.edu.cn:7777/#/link/90E8094236087990F7DEF450A2889568",
+      "实验网盘提交链接：<a>https://icloud.qd.sdu.edu.cn:7777/#/link/90E8094236087990F7DEF450A2889568</a>",
       " 实验不需要当堂验收，只需要提交实验报告",
       "可视化实验可以尽情发挥自己的想象力和创造能力，如果认为自己的可视化效果 创意性/效果 突出，非常建议跟助教/教授自荐！",
       "入门教程仅为最方便的技术路线，并不限制同学们的技术路线，但只能使用 d3、vega等可视化工具，亦或者其他相关的可视化工具（如 g2、echarts、vega lite）"

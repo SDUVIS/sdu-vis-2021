@@ -52,9 +52,14 @@
     }
   }
 
+  .gallery{
+    padding-bottom: 0.5em;
+  }
+
   .aside{
     font-size: 0.8em;
     position: absolute;
+    padding-top: 1em;
     width: $aside-width;
   }
 

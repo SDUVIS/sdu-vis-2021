@@ -2,56 +2,24 @@ import styles from "./Projects.module.scss";
 // import {v4 as uuid} from "uuid";
 import React, { useContext, memo } from "react";
 import { localeContext } from "../../context/localeContext.js";
-import { capitalCase } from "change-case";
-import {} from "../../helpers"
-
-type ProjectData = {
-  order: number,
-  content: string,
-  start: string,
-  end: string
-}
-
-type ProjectProp = ProjectData;
-
-const Project: React.FC<ProjectProp> = ({order, content, start, end}) => (
-  <tr>
-    <th scope="row">{order}</th>
-    <td dangerouslySetInnerHTML={{__html: content}}></td>
-    <td dangerouslySetInnerHTML={{__html: start}}></td>
-    <td dangerouslySetInnerHTML={{__html: end}}></td>
-  </tr>
-)
-
-const ProjectsTable: React.FC<{}> = () => {
-  const {locale, projects} = useContext(localeContext)
-  return (
-    <>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th scope="col">{locale.order.toLocaleUpperCase()}</th>
-            <th scope="col">{locale.content.toLocaleUpperCase()}</th>
-            <th scope="col">{locale.startDate.toLocaleUpperCase()}</th>
-            <th scope="col">{locale.endDate.toLocaleUpperCase()}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {projects.data.map((data: ProjectData , i: number) => <Project key={i} order={i+1} content={data.content} start={data.start} end={data.end}/>)}
-        </tbody>
-        <tfoot></tfoot>
-      </table>
-    </>
-  );
-}
+import { capitalCase } from "../../helpers";
+import ProjectsTable from "./ProjectsTable/ProjectsTable";
+import Notes from "./Notes/Notes";
 
 const Projects:React.FC<{}> = () => {
   const {locale } = useContext(localeContext)
-  const {projects, list} = locale;
-  const projectsListLocale = [projects, list].join(" ");
+  const {projects, list, notes, _lang} = locale;
   return (<div className={styles['main-container']}>
-    <h2>{capitalCase([projects, list].join(" ")) || projectsListLocale}</h2>
-    <ProjectsTable/>
+    <section>
+      <h2>{ capitalCase([projects, list], _lang) }</h2>
+      <hr/>
+      <ProjectsTable/>
+    </section>
+    <section className={styles["notes"]}>
+      <h2>{ capitalCase(notes, _lang) }</h2>
+      <hr/>
+      <Notes/>
+    </section>
   </div>)
 }
 
