@@ -2,25 +2,35 @@
   "instructors": [
     {
       "en": "Yunhai Wang",
-      "zh": "汪云海"
+      "zh": "汪云海",
+      "site": "https://yunhaiwang.net",
+      "email": "cloudseawang@gmail.com"
     }
   ],
   "assistants": [
     {
       "en": "Cheng Peng",
-      "zh": "彭程"
+      "zh": "彭程",
+      "site": "https://github.com/viruspc",
+      "email": "cheng.peng.helloworld@gmail.com"
     },
     {
       "en": "Fahai Zhong",
-      "zh": "钟发海"
+      "zh": "钟发海",
+      "site": "https://github.com/fahaizhong",
+      "email": "fahai.zhong@foxmail.com"
     },
     {
       "en": "Kaiyi Zhang",
-      "zh": "张开翼"
+      "zh": "张开翼",
+      "site": "https://github.com/KaiyiWing",
+      "email": "Zhang.Kaiyi42@gmail.com"
     },
     {
       "en": "Yuchun Wang",
-      "zh": "王玉春"
+      "zh": "王玉春",
+      "site": "https://github.com/iwangyuchun",
+      "email": "1140145488@qq.com"
     }
   ]
 }

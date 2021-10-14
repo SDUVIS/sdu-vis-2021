@@ -1,3 +1,11 @@
-.profile{
+@use "../../base.module" as base;
+.profile {
   padding-bottom: 0.5em;
+  a {
+    color: black;
+    text-decoration: none;
+    &:hover {
+      color: base.$light-important-color;
+    }
+  }
 }

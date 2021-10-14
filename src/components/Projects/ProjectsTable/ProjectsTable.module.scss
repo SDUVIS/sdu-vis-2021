@@ -23,9 +23,10 @@
     caption-side: bottom;
     border-collapse: collapse;
     table-layout: fixed;
-    word-wrap: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    //word-wrap: break-word;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    hyphens: manual;
 
     td, th{
         border: 1px solid black;
@@ -43,7 +44,8 @@
       max-width: 100px;
     }
     tr>*:nth-child(2){
-      word-break: break-all;
+      overflow-wrap: break-word;
+      //word-break: break-all;
     }
     tr>*:nth-child(3), tr>*:nth-child(4){
       max-width: 100px;

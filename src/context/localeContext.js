@@ -21,7 +21,11 @@ const extractLocaleProfilesData = (data, lang = "en", sublang = "zh") =>
   Object.fromEntries(
     Object.entries(data).map(([key, value]) => [
       key,
-      value.map((value) => (value[lang] ? value[lang] : value[sublang])),
+      value.map((value) => ({
+        name: value[lang] ? value[lang] : value[sublang],
+        site: value["site"],
+        email: value["email"]
+      })),
     ])
   );
 
