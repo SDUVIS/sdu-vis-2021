@@ -1,1 +1,1 @@
-export { combineEnWords, combineZhWords, isEnglishWord, capitalCase } from "./parseWord";
+export { combineEnWords, combineZhWords, isEnglishWord, capitalCase, softLineBreakForDateString } from "./parseWord";

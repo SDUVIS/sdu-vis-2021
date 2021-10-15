@@ -30,3 +30,11 @@ export function capitalCase(word: string | string[], lang: string = "en"): strin
   if(lang === "zh") return combineZhWords(word);
   throw Error("not supported language");
 }
+
+export function softLineBreakForDateString(date: string|string[], separator="/"): string{
+  const wbrElem = "<wbr>";
+  if(typeof date === "string"){
+    return date.split(separator).join(wbrElem + separator);
+  }
+  return date.join(wbrElem + separator);
+}

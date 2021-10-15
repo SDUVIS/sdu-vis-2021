@@ -1,5 +1,11 @@
 @use "../../../base.module" as base;
 
+.content-list{
+  margin: 0.3em 0.3em 0.3em 0;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
 .table {
     // --bs-table-bg: transparent;
     // --bs-table-accent-bg: transparent;
@@ -45,9 +51,10 @@
     }
     tr>*:nth-child(2){
       overflow-wrap: break-word;
-      //word-break: break-all;
+      word-break: break-all;
     }
     tr>*:nth-child(3), tr>*:nth-child(4){
       max-width: 100px;
+      overflow-wrap: break-word;
     }
 }

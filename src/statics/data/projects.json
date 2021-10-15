@@ -2,14 +2,37 @@
   "data": {
     "zh": [
       {
-        "content": "1. 学会 D3 or vega 基本开发 <br/>2. 基于至少3钟不同的方法(bar chart, parallel set, scatter matrix，star plot等）把这个数据（如后图）可视化出来。",
-        "start": "2021/9/13",
-        "end": "2021/9/15"
+        "contents": [
+          "学会 D3 or vega 基本开发",
+          "基于至少3钟不同的方法(bar chart, parallel set, scatter matrix，star plot等）把这个数据（如后图）可视化出来。"
+        ],
+        "start": "2021/09/13",
+        "end": "2021/09/15"
       },
       {
-        "content": "1. <a href='https://courses.cs.washington.edu/courses/cse412/21wi/a1.html'>https://courses.cs.washington.edu/courses/cse412/21wi/a1.html</a> <br/>2. 加上熟悉d3中的log scale 与tick mark 生成 ",
-        "start": "2021/9/18",
+        "contents": [
+          "<a href='https://courses.cs.washington.edu/courses/cse412/21wi/a1.html'>https://courses.cs.washington.edu/courses/cse412/21wi/a1.html</a>",
+          "熟悉d3中的log scale 与tick mark 生成 "
+        ],
+        "start": "2021/09/18",
         "end": "2021/10/3"
+      },
+      {
+        "contents": [
+          "体验<a href='https://projector.tensorflow.org/'>https://projector.tensorflow.org/</a>",
+          "用<a href='https://lvdmaaten.github.io/drtoolbox/'>https://lvdmaaten.github.io/drtoolbox/</a>, 比较t-sne pca, isomap等方法的区别",
+          "数据下载地址: <a href='https://archive.ics.uci.edu/ml/datasets.php'>https://archive.ics.uci.edu/ml/datasets.php<a>"
+        ],
+        "start": "2021/10/4",
+        "end": "2021/10/16"
+      },
+      {
+        "contents": [
+          "参考<a href='https://distill.pub/2016/misread-tsne/'>https://distill.pub/2016/misread-tsne/</a>对mnist数据分析不同参数对t-sne结果的影响",
+          "minist数据：<a href+>http://yann.lecun.com/exdb/mnist/</a>"
+        ],
+        "start": "2021/10/11",
+        "end": "2021/10/xx"
       }
     ]
   },
