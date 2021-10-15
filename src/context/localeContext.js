@@ -9,25 +9,48 @@ import referenceData from "../statics/data/references.json";
 import galleryData from "../statics/data/gallery.json";
 import demosData from "../statics/data/demos.json";
 
-const extractLocaleDescriptionAndProjectsData = (data, lang = "en", sublang = "zh") =>
-  Object.fromEntries(
+const sublangMap = {
+  en: "zh",
+  zh: "en",
+};
+
+const extractLocaleDescriptionAndProjectsData = (
+  data,
+  lang = "en",
+  sublang
+) => {
+  sublang = sublang || sublangMap[lang];
+  return Object.fromEntries(
     Object.entries(data).map(([key, value]) => [
       key,
       value[lang] ? value[lang] : value[sublang],
     ])
   );
+};
 
-const extractLocaleProfilesData = (data, lang = "en", sublang = "zh") =>
-  Object.fromEntries(
+const extractLocaleProfilesData = (data, lang = "en", sublang) => {
+  sublang = sublang || sublangMap[lang];
+  return Object.fromEntries(
     Object.entries(data).map(([key, value]) => [
       key,
       value.map((value) => ({
-        name: value[lang] ? value[lang] : value[sublang],
+        name: value[lang + "Name"]
+          ? value[lang + "Name"]
+          : value[sublang + "Name"],
         site: value["site"],
-        email: value["email"]
+        email: value["email"],
       })),
     ])
   );
+};
+
+const extractLocaleDemosData = (data, lang = "en", sublang) => {
+  sublang = sublang || sublangMap[lang]; 
+  return data.map((d) => ({
+    name: d[lang + "Name"] ? d[lang + "Name"] : d[sublang + "Name"],
+    figures: d.figures,
+  }));
+};
 
 const enProfiles = extractLocaleProfilesData(profilesData, "en");
 const zhProfiles = extractLocaleProfilesData(profilesData, "zh");
@@ -41,6 +64,8 @@ const zhDescription = extractLocaleDescriptionAndProjectsData(
   descriptionData,
   "zh"
 );
+const enDemos = extractLocaleDemosData(demosData, "en");
+const zhDemos = extractLocaleDemosData(demosData, "zh");
 
 const localeThemes = {
   en: {
@@ -50,7 +75,7 @@ const localeThemes = {
     projects: enProjects,
     references: referenceData,
     gallery: galleryData,
-    demos: demosData
+    demos: enDemos,
   },
   zh: {
     locale: zhLocale,
@@ -59,10 +84,10 @@ const localeThemes = {
     projects: zhProjects,
     references: referenceData,
     gallery: galleryData,
-    demos: demosData
+    demos: zhDemos,
   },
 };
 
 const localeContext = createContext(localeThemes.en);
 
-export {localeThemes, localeContext};
+export { localeThemes, localeContext };

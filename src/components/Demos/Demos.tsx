@@ -22,7 +22,7 @@ const Experiment: React.FC<{data: Demo}> = ({data}) => {
 function Demos(){
   const { demos } = useContext(localeContext);
   return <div className={styles.demos}>
-    {demos.map((demo, i) => <Experiment key={i} data={demo}/>)}
+    {demos.map((demo: Demo, i: number) => <Experiment key={i} data={demo}/>)}
     <br/>
   </div>;
 }

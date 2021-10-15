@@ -1,6 +1,7 @@
 [
   {
-    "name": "实验一",
+    "zhName": "项目一",
+    "enName": "Project 1",
     "figures": [
       {
         "path": "/demos/实验一/1.png"
@@ -23,7 +24,8 @@
     ]
   },
   {
-    "name": "实验二",
+    "zhName": "项目二",
+    "enName": "Project 2",
     "figures": [
       {
         "path": "/demos/实验二/1.png"

@@ -4,7 +4,7 @@
     "shandongUniversityAbbr": "SDU",
     "schoolOfComputerSicenceAndTechnology": "计算机科学与技术学院",
     "home": "主页",
-    "projects": "课程项目",
+    "projects": "项目",
     "demos": "作业展示",
     "list": "列表",
     "notes": "注意事项",
@@ -35,5 +35,15 @@
     "order": "序号",
     "content": "内容",
     "startDate": "实验日期",
-    "endDate": "截止日期"
+    "endDate": "截止日期",
+    "1": "一",
+    "2": "二",
+    "3": "三",
+    "4": "四",
+    "5": "五",
+    "6": "六",
+    "7": "七",
+    "8": "八",
+    "9": "九",
+    "10": "十"
 }
