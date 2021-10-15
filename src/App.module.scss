@@ -78,13 +78,13 @@
 }
 
 @media screen and (max-width: base.$device-width) {
-  $aside-width: 6em;
+  $aside-width: 7em;
   $container-padding: 0.5em 0.5em;
   @include styling($aside-width, $container-padding)
 }
 
 @media screen and (min-width: base.$device-width) {
-  $aside-width: 9em;
+  $aside-width: 10em;
   $container-padding: 1em 1em;
   @include styling($aside-width, $container-padding)
 }

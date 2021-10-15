@@ -9,5 +9,4 @@ const defaultState = {
 }
 
 function reducer(state = defaultState, action){
-  //if(action)
 }

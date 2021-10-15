@@ -8,7 +8,7 @@ const Notes: React.FC<{}> = () => {
   const { notes } = projects;
   return (
     <ul className={styles["notes"]}>
-      {notes.map((note: string) => (<li dangerouslySetInnerHTML={{__html: note}}></li>))}
+      {notes.map((note: string, i: number) => (<li key={i} dangerouslySetInnerHTML={{__html: note}}></li>))}
     </ul>
   );
 }

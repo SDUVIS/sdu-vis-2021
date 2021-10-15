@@ -11,9 +11,13 @@ type ProfileDatum = {
 }
 
 const Profile: React.FC<{profileDatum: ProfileDatum}> = ({profileDatum}) => {
-  return (<div>
-    {profileDatum.name}<br/>
-    <a href={profileDatum.site}>home</a>|<a href={"tomail:" + profileDatum.email}>mail</a>
+  return (<div className={styles["profile"]}>
+    <span className={styles["name"]}>
+      {profileDatum.name}
+    </span>
+    <span className={styles["links"]}>
+      <a href={profileDatum.site} className="iconfont icon-link"></a><a href={"mailto:" + profileDatum.email} className="iconfont icon-email-fill"></a>
+    </span>
   </div>);
 }
 
@@ -24,11 +28,11 @@ const Profiles: React.FC<{}> = () => {
   return (<div className={styles["profiles"]}>
     <section>
       <h3>{capitalCase(instructors, _lang)}</h3>
-      {instructorProfiles.map((profile: ProfileDatum, i: number) => <Profile profileDatum={profile}/>)}
+      {instructorProfiles.map((profile: ProfileDatum, i: number) => <Profile profileDatum={profile} key={i}/>)}
     </section>
     <section>
       <h3>{capitalCase(assistants, _lang)}</h3>
-      {assistantProfiles.map((profile: ProfileDatum, i: number) => <Profile profileDatum={profile}/>)}
+      {assistantProfiles.map((profile: ProfileDatum, i: number) => <Profile profileDatum={profile} key={i}/>)}
     </section>
     </div>)
 }

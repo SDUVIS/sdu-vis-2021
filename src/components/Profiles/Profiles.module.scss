@@ -1,5 +1,5 @@
 @use "../../base.module" as base;
-.profile {
+.profiles {
   padding-bottom: 0.5em;
   a {
     color: black;
@@ -8,4 +8,20 @@
       color: base.$light-important-color;
     }
   }
+}
+
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 0.3em;
+}
+
+.name{
+  display: inline-block;
+}
+
+.links {
+  margin-left: 0.3em;
+  display: inline-block flex;
+  justify-content: center;
 }
