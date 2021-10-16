@@ -15,7 +15,7 @@
           "熟悉d3中的log scale 与tick mark 生成 "
         ],
         "start": "2021/09/18",
-        "end": "2021/10/3"
+        "end": "2021/10/03"
       },
       {
         "contents": [
@@ -23,7 +23,7 @@
           "用<a href='https://lvdmaaten.github.io/drtoolbox/'>https://lvdmaaten.github.io/drtoolbox/</a>, 比较t-sne pca, isomap等方法的区别",
           "数据下载地址: <a href='https://archive.ics.uci.edu/ml/datasets.php'>https://archive.ics.uci.edu/ml/datasets.php<a>"
         ],
-        "start": "2021/10/4",
+        "start": "2021/10/04",
         "end": "2021/10/16"
       },
       {
