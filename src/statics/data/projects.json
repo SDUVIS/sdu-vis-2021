@@ -4,10 +4,10 @@
       {
         "contents": [
           "学会 D3 or vega 基本开发",
-          "基于至少3钟不同的方法(bar chart, parallel set, scatter matrix，star plot等）把这个数据（如后图）可视化出来。"
+          "基于至少3种不同的方法(bar chart, parallel set, scatter matrix，star plot等）把这个数据（如后图）可视化出来。"
         ],
         "start": "2021/09/13",
-        "end": "2021/09/15"
+        "end": "2021/09/25"
       },
       {
         "contents": [
@@ -32,7 +32,7 @@
           "minist数据：<a href+>http://yann.lecun.com/exdb/mnist/</a>"
         ],
         "start": "2021/10/11",
-        "end": "2021/10/xx"
+        "end": "2021/10/23"
       }
     ]
   },
