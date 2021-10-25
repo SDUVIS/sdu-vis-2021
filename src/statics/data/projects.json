@@ -41,6 +41,13 @@
         ],
         "start": "2021/10/18",
         "end": "2021/10/31"
+      },
+      {
+        "contents": [
+          " 阅读https://jheer.github.io/barnes-hut/，理解force-directed layout的算法，构建用例跑一下d3的fore-directed layout"
+        ],
+        "start": "2021/10/25",
+        "end": "2021/11/8"
       }
     ]
   },
