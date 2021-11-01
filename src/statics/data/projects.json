@@ -52,8 +52,15 @@
       {
         "contents": [
           "需要汇报的作业：https://courses.cs.washington.edu/courses/cse512/21sp/a2.html, 11月15日上课请同学讲",
-          "用https://ialab.it.monash.edu/webcola/",
-          "用 https://github.com/dagrejs/dagre"
+        ],
+        "start": "2021/11/1",
+        "end": "2021/11/14"
+      }
+      {
+        "contents": [
+          "实验任务:",
+          "1. 使用https://ialab.it.monash.edu/webcola/",
+          "2. 使用 https://github.com/dagrejs/dagre"
         ],
         "start": "2021/11/1",
         "end": "2021/11/14"
