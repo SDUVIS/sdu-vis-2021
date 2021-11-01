@@ -44,14 +44,14 @@
       },
       {
         "contents": [
-          " 阅读https://jheer.github.io/barnes-hut/，理解force-directed layout的算法，构建用例跑一下d3的fore-directed layout"
+          " 阅读<a href='https://jheer.github.io/barnes-hut/'>https://jheer.github.io/barnes-hut/</a>，理解force-directed layout的算法，构建用例跑一下d3的fore-directed layout"
         ],
         "start": "2021/10/25",
         "end": "2021/11/8"
       },
       {
         "contents": [
-          "需要汇报的作业：https://courses.cs.washington.edu/courses/cse512/21sp/a2.html, 11月15日上课请同学讲"
+          "需要汇报的作业：<a href='https://courses.cs.washington.edu/courses/cse512/21sp/a2.html'>https://courses.cs.washington.edu/courses/cse512/21sp/a2.html</a>, 11月15日上课请同学讲"
         ],
         "start": "2021/11/1",
         "end": "2021/11/14"
@@ -59,8 +59,8 @@
       {
         "contents": [
           "实验任务:",
-          "1. 使用https://ialab.it.monash.edu/webcola/",
-          "2. 使用 https://github.com/dagrejs/dagre"
+          "1. 使用 <a href='https://ialab.it.monash.edu/webcola/'>https://ialab.it.monash.edu/webcola/</a>",
+          "2. 使用 <a href='https://github.com/dagrejs/dagre'>https://github.com/dagrejs/dagre</a>"
         ],
         "start": "2021/11/1",
         "end": "2021/11/14"
