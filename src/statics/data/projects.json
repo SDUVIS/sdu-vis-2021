@@ -64,6 +64,15 @@
         ],
         "start": "2021/11/1",
         "end": "2021/11/14"
+      },
+      {
+        "contents": [
+          "实验任务: 使用",
+          "1. <a href='https://colorbrewer2.org'>https://colorbrewer2.org</a>",
+          "2. <a href='https://color.adobe.com/zh/explore/'>https://color.adobe.com/zh/explore/</a>"
+        ],
+        "start": "2021/11/8",
+        "end": "无需提交"
       }
     ]
   },
