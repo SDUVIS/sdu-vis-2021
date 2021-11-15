@@ -73,6 +73,23 @@
         ],
         "start": "2021/11/8",
         "end": "无需提交"
+      },
+      {
+        "contents": [
+          "实验任务: ",
+          "1. 看这个视频 https://bids.github.io/colormap/",
+          "2. 找一个简单的2d scalar field，用 这里的colormap做可视化",
+          "3. 了解three.js中的marching square和maching cube实现， https://threejs.org/examples/webgl_marchingcubes.html"
+        ],
+        "start": "2021/11/15",
+        "end": "无需提交"
+      },
+      {
+        "contents": [
+          "组队3-4人做课程大作业，从IEEE VAST 21 challenge任意选一个题目来做  https://vast-challenge.github.io/2021/about.html"
+        ],
+        "start": "2021/11/15",
+        "end": "2021/12/12"
       }
     ]
   },
