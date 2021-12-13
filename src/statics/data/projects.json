@@ -102,6 +102,21 @@
         "contents": ["使用d3中的horizon graph,和streamgraph"],
         "start": "2021/11/29",
         "end": "无需提交"
+      },
+      {
+        "contents": [
+          " 使用d3或者vega lite实现基本的交互(brushing linking, and dynamic query)"
+        ],
+        "start": "2021/12/06",
+        "end": "无需提交"
+      },
+      {
+        "contents": [
+          "用d3中的word cloud和edworlde 或者shapewordle做1-2个可视化 http://www.edwordle.net/, http://www.shapewordle.com/",
+          "看animation的课件62-86页，使用d3做一个简单的动画"
+        ],
+        "start": "2021/12/13",
+        "end": "无需提交"
       }
     ]
   },
