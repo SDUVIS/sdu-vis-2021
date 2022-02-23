@@ -14,7 +14,7 @@ const sublangMap = {
   zh: "en",
 };
 
-const extractLocaleDescriptionAndProjectsData = (
+const selectLocaleDescriptionAndProjectsData = (
   data,
   lang = "en",
   sublang
@@ -28,7 +28,7 @@ const extractLocaleDescriptionAndProjectsData = (
   );
 };
 
-const extractLocaleProfilesData = (data, lang = "en", sublang) => {
+const selectLocaleProfilesData = (data, lang = "en", sublang) => {
   sublang = sublang || sublangMap[lang];
   return Object.fromEntries(
     Object.entries(data).map(([key, value]) => [
@@ -44,7 +44,7 @@ const extractLocaleProfilesData = (data, lang = "en", sublang) => {
   );
 };
 
-const extractLocaleDemosData = (data, lang = "en", sublang) => {
+const selectLocaleDemosData = (data, lang = "en", sublang) => {
   sublang = sublang || sublangMap[lang]; 
   return data.map((d) => ({
     name: d[lang + "Name"] ? d[lang + "Name"] : d[sublang + "Name"],
@@ -52,20 +52,20 @@ const extractLocaleDemosData = (data, lang = "en", sublang) => {
   }));
 };
 
-const enProfiles = extractLocaleProfilesData(profilesData, "en");
-const zhProfiles = extractLocaleProfilesData(profilesData, "zh");
-const enProjects = extractLocaleDescriptionAndProjectsData(projectsData, "en");
-const zhProjects = extractLocaleDescriptionAndProjectsData(projectsData, "zh");
-const enDescription = extractLocaleDescriptionAndProjectsData(
+const enProfiles = selectLocaleProfilesData(profilesData, "en");
+const zhProfiles = selectLocaleProfilesData(profilesData, "zh");
+const enProjects = selectLocaleDescriptionAndProjectsData(projectsData, "en");
+const zhProjects = selectLocaleDescriptionAndProjectsData(projectsData, "zh");
+const enDescription = selectLocaleDescriptionAndProjectsData(
   descriptionData,
   "en"
 );
-const zhDescription = extractLocaleDescriptionAndProjectsData(
+const zhDescription = selectLocaleDescriptionAndProjectsData(
   descriptionData,
   "zh"
 );
-const enDemos = extractLocaleDemosData(demosData, "en");
-const zhDemos = extractLocaleDemosData(demosData, "zh");
+const enDemos = selectLocaleDemosData(demosData, "en");
+const zhDemos = selectLocaleDemosData(demosData, "zh");
 
 const localeThemes = {
   en: {
